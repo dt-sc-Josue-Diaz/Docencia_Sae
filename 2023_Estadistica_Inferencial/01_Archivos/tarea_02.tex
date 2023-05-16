@@ -1,0 +1,174 @@
+\documentclass{assignment}
+
+\usepackage{lipsum}
+
+\newcommand*{\name}{}
+\newcommand*{\id}{}
+\newcommand*{\course}{Inferencia}
+\newcommand*{\assignment}{Tarea 2}
+
+% Entornos personales
+\include{00_preambulo/00_entornos}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Preguntas}
+%%%%%%%%%%%%%%%%%%%% Pregunta 1 %%%%%%%%%%%%%%%%%%%% 
+\subsection{ejercicio: Esperanza}
+%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}
+	\item Considera la siguiente función de probabilidad.
+\begin{center}
+	\begin{tabular}{ |c|c|c|c|c| } 
+ 	\hline
+ $x$ & $-1$ & $0$ & $1$ & $2$ \\ 
+	 \hline
+ $f(x)$      & 1/8 & 4/8 & 1/8 & 2/8 \\
+ 	\hline
+	\end{tabular}
+\end{center}
+	Calcula la esperanza de la variable $X$ que tiene a  $f(x)$ como función de probabilidad. 
+
+	
+	\item Sea 
+	\begin{align*}
+	f(x)= \begin{cases} \text{ si } 2x \in (0,1) \\
+		0 \text{ en otro caso.}
+		\end{cases}
+	\end{align*}
+Calcula la esperanza de la variable $X$ que tiene a $f(x)$ como función de densidad.
+
+	\item Considera a una variable aleatoria discreta con posibles valores en el conjunto $\{1,2, \dots n\}.$ Considera a esta variable $X$ distribuida de manera uniforme en este conjunto. Calcula la esperanza de $X$. 
+	
+	\item Considera la siguiente función de probabilidad.
+\begin{center}
+	\begin{tabular}{ |c|c|c|c|c|c| } 
+ 	\hline
+ $x$ & $-2$ & $-1$ & $0$ & $1$ & $2$ \\ 
+	 \hline
+ $f_X(x)$ & 2/8 & 1/8 & 2/8 & 1/8  & 2/8 \\
+ 	\hline
+	\end{tabular}
+\end{center}		
+	Para la función $h(x)= x^2$ considera la variable $Y=h(X)$. Da una tabla como la anterior para $f_Y$ y calcula la esperanza de $Y$. En el caso continuo, considera a $X$ una variable uniforme en el intervalo $(0,1)$, nuevamente sea $Y=h(X)$, calcula la esperanza de $Y.$
+	 
+
+	
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%% Pregunta 2 %%%%%%%%%%%%%%%%%%%% 
+\subsection{ejercicio}
+\begin{enumerate}
+	\item Considera los puntos $(22,-22)$ y $(11,y)$ calcula el valor de $y$ tal que la pendiente de la recta que pasa por los puntos tiene pendiente $m=\pi.$
+	\item De los puntos anteriores encuentra los valores de $a$ y $b$ de manera que al recta puede escribirse como $ax+b.$ 
+	\item Calcula la recta perpendicular la recta de los incisos anteriores. 
+	\item Investiga una ecuación para calcular la distancia de la recta al punto $(\pi,e).$
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%% Pregunta 3 %%%%%%%%%%%%%%%%%%%% 
+\subsection{ejercicio: Intervalos de confianza}
+
+\begin{enumerate}
+	\item El departamento de tránsito de una cierta ciudad realizó una investigación para estimar el tiempo promedio $\mu,$ de reacción de un automovilista que conduce a una velocidad dada. Se hizo una estimación tomando una muestra aleatoria a 100 automovilistas donde se encontró que los tiempo de reacción de la muestra es  $\overline{x}=.86$ con $s^2=.09$. Comprobemos que los limites de confianza de la tabla. Además para cada uno de ellos calcule el intervalo $\overline{x}-\varepsilon < \mu < \overline{x}-\varepsilon$.
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+ \hline
+ Nivel de confianza & $90 \%$ & $95\%$ & $98\%$ & $99\%$ \\ 
+ \hline
+ $\frac{\varepsilon }{\sigma/\sqrt{n}}$      & 1.65    & 1.96   & 2.33   & 2.58  \\
+ \hline
+\end{tabular}
+\end{center}
+
+
+\item Supóngase que las estaturas de 100 estudiantes varones de una universidad representan una muestra aleatoria de las estaturas de los 1 546 estudiantes de esa universidad. Con $\overline{X}=67.45$ y $s^2=8.6136.$ (media muestral y desviación estándar muestral.) Calcula.
+
+\begin{itemize}
+    \item Los limites de confianza del $95\%$. 
+
+    \item Los limites de confianza del $99\%$. 
+\end{itemize}
+
+	\item Para el caso de un nivel de confianza de $95\%$ el error es; $$1.96*\frac{.3}{\sqrt{100}}= .0588.$$ 
+\begin{itemize}
+    \item Para que el error se reduzca a la mitad ¿de que tamaño debe ser la muestra?
+    \item y ¿para que se reduzca a la décima parte?
+\end{itemize}
+
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%% Pregunta 4 %%%%%%%%%%%%%%%%%%%% 
+\subsection{ejercicio: Método de máxima verosimilitud.}
+%%%%%%%%%%%%%%%%%%%%
+Investiga el método de máxima verosimilitud (likelihood) y encuentra el estimador de máxima verosimilitud para el parámetro $\lambda$ de una muestra $X_1, \dots, X_n$ distribuidas de manera exponencial.
+
+\textbf{Definición:}
+La función de verosimilitud de una muestra aleatoria $X_1, \cdots X_n$ denotada por $L(\theta)$ se define como la función de densidad conjunta, 
+
+\begin{align*}
+	L(\theta) = f_{X_1, \dots X_n}(x_1, \dots x_n;\theta) 
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%% Puntos extras %%%%%%%%%%%%%%%%%%%%
+\section{Puntos extras}
+
+%%%%%%%%%%%%%%%%%%%% Pregunta 1 %%%%%%%%%%%%%%%%%%%% 
+ \subsection{Pregunta}
+%%%%%%%%%%%%%%%%%%%%
+Sea $X$ una variable con densidad dada por 
+\begin{align*}
+f(x) = \begin{cases}
+\theta x ^{\theta-1} & \text{ si } 0 \leq x \leq 1 \\
+0 & \text{ en otro caso.}
+\end{cases}
+\end{align*}
+Encuentra un método para deducir al estimador $\theta = \frac{\overline{X}}{1-\overline{X}}$. ¿Es insesgado?
+
+%%%%%%%%%%%%%%%%%%%% Pregunta 2 %%%%%%%%%%%%%%%%%%%% 
+ \subsection{ejercicio}
+Un intervalo de confianza al $(1- \alpha)*100\%$ para la media poblacional $\mu$ de una distribucón normal con varianza conocida $\sigma^2$ esta dada por 
+
+\begin{align*}
+	\Prb \left( -z_{\alpha/2} < \frac{\overline{X}-\mu}{\sigma /\sqrt{n}} < z_{\alpha/2} \right)=1-\alpha.
+\end{align*}
+
+calcula los limites de confianza y los intervalos de confianza. 
+
+%%%%%%%%%%%%%%%%%%%% Pregunta 3 %%%%%%%%%%%%%%%%%%%% 
+ \subsection{ejercicio}
+%%%%%%%%%%%%%%%%%%%%
+De un intervalo de confianza al $90\%$ para la media de una población con $\sigma = 5$ cuando se ha tomado una muestra de 25 cuya media muestral es 60. Es obligatorio usar el ejercicio 2 de esta sección, es decir, sustituir los valores encontrados en el ejercicio 2.  
+
+%%%%%%%%%%%%%%%%%%%% Pregunta 4 %%%%%%%%%%%%%%%%%%%% 
+\subsection{ejercicio}
+%%%%%%%%%%%%%%%%%%%%
+Sea $f$ una función diferenciable. Se sabe que la derivada de $f$ está relacionada con la recta tangente  a la gráfica de $f.$ ¿Qué relación existe entre la pendiente de recta tangente de $f'$ con $f$. Considera el criterio de la segunda derivada.
+%%%%%%%%%%%%%%%%%%%% Pregunta 4 %%%%%%%%%%%%%%%%%%%% 
+\subsection{ejercicio}
+%%%%%%%%%%%%%%%%%%%%
+El $n$-ésimo momento muestral esta dado por 
+
+\begin{align*}
+\frac{1}{n} \sum_ {i=0}^n X_i^k
+\end{align*}
+el método  de momentos para estimar un parámetro $\theta$ consiste en igualar los momentos muestrales con los momentos poblacionales. 
+
+Sea $X_1 \cdots X_n$ una muestra distribuida $Ber(p)$ halle una estimación $\hat{p}$ para $p$ por medio del método de momentos. 
+
+
+\section{Investigación: Teorema límite central y ley de los grandes números}
+
+Son dos temas, el primero es el teorema limite central, en este ensayo procura evitar los cálculos y los detalles matemáticos avanzados. Explica las hipótesis del teorema, esto es ¿bajo que condiciones se cumple? ¿cuál es la importancia de este teorema? Procura no exceder mas de una cuartilla y agrega la bibliografía. 
+
+La investigación de la ley de los grandes números tiene dos opciones, la ley débil y la fuerte. Considera este tema una investigación independiente de la anterior pero considera las instrucciones anteriores. 
+
+Reflexiona, ¿cómo se usa la distribución normal para el cálculo de intervalos de confianza de muestras grandes? 
+
+
+\end{document}

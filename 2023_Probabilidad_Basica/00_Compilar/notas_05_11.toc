@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {1}Repaso matemático: Transformaciones invertibles}{2}{}%
+\contentsline {section}{\numberline {2}Teorema de Bayes}{3}{}%
+\contentsline {section}{\numberline {3}Independencia de eventos}{4}{}%
+\contentsline {section}{\numberline {4}Probabilidad condicional}{5}{}%

@@ -1,0 +1,134 @@
+\documentclass{article}
+
+\usepackage[a5paper]{geometry} 
+\geometry{top=1.5cm, bottom=1.5cm, left=1.25cm, right=1.25cm}
+
+
+\usepackage{graphicx} % Required for inserting images
+\usepackage[spanish]{babel}
+
+\usepackage{amsmath,amssymb}
+
+\title{Inferencia}
+\author{Instituto Artek}
+\date{\today}
+
+\newcommand{\Esp}{\mathbb{E}}
+\newcommand{\Var}{\mathbb{V}ar}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Recordatorio}
+Dada una muestra $x_1, \dots, x_n$. Estos valores se consideran como $n$ observaciones de una variable $X$. $X$ es nuestro modelo de interés, pues es el que creemos describe a una población. Sin embargo en contexto de la estadística, es mejor considerar a la muestra $x_1, \dots, x_n$ como valores de $X_1, \dots, X_n$ variables aleatorias con misma distribución que $X$ pero que son independientes ya que la muestra es aleatoria. Por tanto si $X$ tiene valor esperado $\mu$ entonces al considerar a 
+
+\begin{align*}
+    S_n = X_1 + \dots + X_n
+\end{align*}
+ se tiene que 
+
+ \begin{align*}
+     \Esp(S_n) = \Esp(X_1) + \dots + \Esp (X_n)=n \mu = n \Esp(X),
+ \end{align*}
+ 
+por la independencia de la variables también se cumple que, 
+
+ \begin{align*}
+     \Var(S_n) = \Var (X_1) + \dots + \Var (X_n)=n \sigma^2= n \Var(X).
+ \end{align*}
+
+a $S_n$ se le llama \textbf{suma muestral}, note que la suma muestral es una variable aleatoria mientas que $x_1+ \cdots + x_n$ es la \textbf{suma de la muestra} y es un número.
+
+Notemos además, para $\overline{X}= S_n/n$ se tiene que $\Esp(\overline{X})=\mu$. 
+\section{Estimadores}
+
+Supongamos el caso en que tenemos una distribución con parámetro desconocido $\theta$. La idea es aproximar este  parámetro mediante $\hat{\theta}$ mediante los datos de la muestra $x_1, \cdots, x_n$. Por ejemplo supongamos una distribución normal con $\sigma^2$ conocida y $\mu$ desconocida entonces podríamos pensar una aproximación $\hat{\mu}= \frac{1}{n}(x_1 + \cdots +x_n)$, es importante recalcar que $\hat{\mu}$ depende de la muestra. 
+
+En general, se define a un \textbf{estimador} para un parámetro $\theta$ a una variable aleatoria 
+
+\begin{align*}
+    \hat{\Theta} = f(X_1, \dots , X_n),
+\end{align*}
+
+un valor particular de $\hat{\Theta}$ denotado por $\hat{\theta}$ es una estimación de $\theta$. 
+
+\section{Estimadores insesgados}
+
+Definimos el sesgo de un estimador $\hat{\Theta}$ para un parámetro $\theta$ por la ecuación
+
+\begin{align*}
+    Ses(\hat{\Theta})= \Esp (\hat{\Theta})- \theta
+\end{align*}
+
+Si $Sesg(\hat{\Theta})=0$ decimos que el estimador $\hat{\Theta}$ es \textbf{insesgado}, en caso contrario decimos que es \textbf{sesgado}.
+
+\textbf{Ejercicio}:
+Consideremos una muestra de 100 personas y sea $X$ el número de personas a favor de un candidato político. 
+
+\begin{enumerate}
+    \item ¿Cuál es la distribución de $X$?
+    \item Considera a $\hat{P}=X/100$. ¿Es un estimador? ¿Qué tipo de estimador es?
+\end{enumerate}
+
+
+
+
+Regresando al ejemplo anterior. Supongamos que tenemos una observación $x=45$ entonces una estimación es $\hat{p}=45/100=.45$. Además supongamos una nueva muestra de 20 personas y considera ahora $Y$ a la cantidad de personas que están a favor de cierto político. Considera ahora los siguientes estimadores para $p$,
+
+\begin{align}
+    \hat{P}_1 = &  1/2 \left[ \frac{X+5Y}{100} \right], \\
+    \hat{P}_2 = &  1/2 \left[ \frac{X+Y}{120} \right]
+\end{align}
+
+Supón ahora que tienes observaciones $x=40$ e $y=15$ calcula,
+\begin{enumerate}
+    \item $\hat{p}_1$ y $\hat{p}_2$
+    \item ¿Cuál de las dos estimaciones escoger? ¿Hay una estimación mejor que otra?
+    \item Calcula las varianzas de $\hat{P}_1$ y $\hat{P}_2$
+\end{enumerate}
+
+
+\section{Eficiencia}
+
+Dados $\Theta_1$ y $\Theta_2$ dos estimadores insesgados  dedimos que el estimador $\Theta_1$ es mas eficiente que $\hat{\Theta}_2$ si 
+
+\begin{align*}
+    \Var(\hat{\Theta}_1) < \Var(\hat{\Theta}_2).
+\end{align*}
+
+y la eficiencia relativa es 
+
+\begin{align*}
+    \Var(\hat{\Theta}_2) / \Var(\hat{\Theta}_1).
+\end{align*}
+
+Si un estimador insesgado es mas eficiente que cualquier otro, decimos que es absolutamente eficiente. Para estimadores sesgados tenemos la definición
+
+
+\begin{align*}
+    \Esp(\hat{\Theta}_2-\theta)^2 / \Esp(\hat{\Theta}_1-\theta)^2.
+\end{align*}
+
+¿Qué podemos decir cuando $\Var(\hat{\Theta}_2) / \Var(\hat{\Theta}_1) >1$, $\Var(\hat{\Theta}_2) / \Var(\hat{\Theta}_1) = 1$ o $\Var(\hat{\Theta}_2) / \Var(\hat{\Theta}_1) < 1$?
+
+\section{Consistencia}
+
+Un estimador $\hat{\Theta}$ es \textbf{consistente} de un parámetro $\theta$ 
+
+\begin{align*}
+     \Esp(\hat{\Theta}-\theta)^2 \to 0
+\end{align*}
+
+cuando $n \to \infty$. A la ecuación anterior se le llama usualmente como \textbf{error cuadrático medio} y es una medida de concentración de $\hat{\Theta}$ alrededor de $\theta$. 
+
+En general se relaciona con la varianza de la siguiente manera. 
+
+\begin{align*}
+     \Esp(\hat{\Theta}-\theta)^2 = \Esp(\hat{\Theta})-\theta)^2 +Var(\hat{\Theta})
+\end{align*}
+
+
+\end{document}

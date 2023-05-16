@@ -1,0 +1,112 @@
+\documentclass{article}
+
+\usepackage[a5paper]{geometry} 
+\geometry{top=1.5cm, bottom=1.5cm, left=1.25cm, right=1.25cm}
+
+
+\usepackage{graphicx} % Required for inserting images
+\usepackage[spanish]{babel}
+
+\usepackage{amsmath,amssymb}
+
+\title{Inferencia}
+\author{Instituto Artek}
+\date{Abril 17}
+
+\newcommand{\Esp}{\mathbb{E}}
+\newcommand{\Var}{\mathbb{V}ar}
+\newcommand{\Prb}{\mathbb{P}}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introducción}
+
+\textbf{Ejercicio:}
+En una universidad $1/3$ de los estudiantes toma 9 horas de crédito, $1/3$ toma 12 horas de crédito y $1/3$ toma 15 horas de crédito. Si $X$ representa las horas de crédito que toma un estudiante, la distribución de  $X$ es $1/3$ para $x=9,12 \text{ y } 15.$ Encontrar la media y la varianza de $X$. ¿Qué tipo de distribución tiene $X$?
+
+\section{Repaso}
+
+Un \textbf{estimador} para un parámetro $\theta$ es una variable aleatoria,
+
+\begin{align*}
+    \hat{\Theta} = f(X_1, \dots , X_n),
+\end{align*}
+
+un valor particular de $\hat{\Theta}$ denotado por $\hat{\theta}$ es una estimación de $\theta$. El sesgo de un estimador $\hat{\Theta}$ para un parámetro $\theta$ por la ecuación,
+
+\begin{align*}
+    Sesghat{\Theta})= \Esp (\hat{\Theta})- \theta
+\end{align*}
+
+Si $Sesg(\hat{\Theta})=0$ decimos que el estimador $\hat{\Theta}$ es \textbf{insesgado}, en caso contrario decimos que es \textbf{sesgado}.
+
+\section{Consistencia}
+
+Un estimador $\hat{\Theta}$ es \textbf{consistente} de un parámetro $\theta$ 
+
+\begin{align*}
+     \Esp(\hat{\Theta}-\theta)^2 \to 0
+\end{align*}
+
+cuando $n \to \infty$. A la ecuación anterior se le llama usualmente como \textbf{error cuadrático medio} y es una medida de concentración de $\hat{\Theta}$ alrededor de $\theta$. En general se relaciona con la varianza de la siguiente manera. 
+
+\begin{align*}
+     \Esp(\hat{\Theta}-\theta)^2 = \Esp((\hat{\Theta})-\theta)^2 +Var(\hat{\Theta})
+\end{align*}
+
+\textbf{Ejercicio:}
+
+$\Esp(\overline{X}-\mu)=\sigma^1/n.$
+
+La relación de consistencia con la probabilidad se da mendiante la desigualdad de Chebyshev, para todo $\varepsilon >0,$
+
+\begin{align*}
+    \Prb(|\hat{\Theta}- \theta| > \varepsilon) \leq \frac{1}{\varepsilon^2} \Esp (\hat{\Theta}-\theta)^2,
+\end{align*}
+esto también nos da consistencia en probabilidad, pues tenemos que si un estimador $\hat{\Theta}$ es consistente entonces
+
+\begin{align*}
+    \Prb(|\hat{\Theta}- \theta| > \varepsilon) \to 0
+\end{align*}
+cuando $n \to \infty.$
+
+\section{Intervalos de confianza}
+Los intervalos de confianza se interpretan como el nivel de confianza sobre la estimación de un parámetro. Por ejemplo, tomada la media muestral $\overline{X}$ y una estimación $\overline{x}=.86$ queremos encontrar un intervalo del tipo $.86 \pm .4$, ahora nuestro interés se enfoca en calcular un error mediante los valores de la muestra. Digamos que nos interesa saber si dada una muestra, tenga media muestral entre $\mu - \varepsilon$ y $\mu + \varepsilon$ en un nivel de confianza del $95\%$, en términos de probabilidades es 
+
+\begin{align*}
+   \Prb( \mu - \varepsilon < \overline{X} < \mu  +\varepsilon) = .95
+\end{align*}
+
+de manera equivalente
+
+\begin{align*}
+   \Prb( \overline{X} - \varepsilon < \mu < \overline{X} +\varepsilon) = .95
+\end{align*}
+
+cuando la muestra es muy grande, $\overline{X}$ tiene una distribución normal con media $\mu$ y varianza $\sigma^2/n$ y así 
+
+\begin{align*}
+   \Prb( \frac{- \varepsilon }{\sigma/\sqrt{n}} < \frac{\overline{X} - \mu }{\sigma/\sqrt{n}}  < \frac{\varepsilon }{\sigma/\sqrt{n}}) = .95
+\end{align*}
+por el teorema limite central tenemos que la distribución limite  $\overline{X}^*=\frac{\overline{X} - \mu }{\sigma/\sqrt{n}}$ es una $Norm(0,1)$. 
+
+\textbf{Ejercicio:}
+Halle el valor de $\frac{\varepsilon }{\sigma/\sqrt{n}}$ tal que
+\begin{align*}
+    \Prb( 0 \leq \overline{X}^* \leq \frac{\varepsilon }{\sigma/\sqrt{n}} ) = .475
+\end{align*}
+o 
+\begin{align*}
+    2*\Prb( 0 \leq \overline{X}^* \leq \frac{\varepsilon }{\sigma/\sqrt{n}} ) = .95
+\end{align*}
+
+a los extremos $\overline{x}\pm \frac{\varepsilon }{\sigma/\sqrt{n}}$ se les llama limites de confianza.
+
+
+\textbf{Ejercicio:}
+El departamento de tránsito de una cierta ciudad realizó una investigación para estimar el tiempo promedio $\mu,$ de reacción de un automovilista que conduce a una velocidad dada. Se hizo una estimación tomando una muestra aleatoria a 100 automovilistas donde se encontró que los tiempo de reacción son  $\overline{x}=.86$ y $s^2=.09$. Halle los limites de confianza del $95\%$. Además del intervalo $\overline{x}-\varepsilon < \mu < \overline{x}-\varepsilon$.
+\end{document}

@@ -1,0 +1,241 @@
+\documentclass{assignment}
+\usepackage{lipsum}
+
+\newcommand*{\name}{}
+\newcommand*{\id}{}
+\newcommand*{\course}{}
+
+\newcommand*{\assignment}{Notas de clase: Lunes 08 de Mayo}
+
+\include{00_preambulo/00_entornos}
+
+\begin{document}
+
+% Titulo
+\maketitle
+
+
+\section{Repaso matemáticas: Ejercicios lógicos}
+
+\subsection*{Negación}
+Dada una proposición o declaración $p$ la \textbf{negación} de $p$ se denota por $\neg q$ y es el valor de verdad contrario al de $p$.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    $p$  & $\neg p$    \\
+    \hline
+    V  & F    \\
+    \hline
+    F  & V    \\
+    \hline
+    \end{tabular}
+    \caption{Tabla de verdad de la negación}
+
+\end{table}
+
+
+\subsection*{Conjunción}
+Dos proposiciones arbitrarias $p$ y $q$ que se combinan mediante la palabra \emph{y} para formar una nueva proposición cuyo valor de verdad depende de $p$ y $q.$ El valor de $p \wedge q$ es verdadero cuando $p$ como $q$ es verdadero. La tabla de verdad en este caso es,
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $p$  & $q$ & $p \wedge q$   \\
+    \hline
+    V  & V & V   \\
+    \hline
+    V  & F & F   \\
+    \hline
+    F  & V & F   \\
+    \hline
+    F  & F & F   \\
+    \hline
+    \end{tabular}
+    \caption{Tabla de verdad de la conjunción}
+
+\end{table}
+
+\subsection*{Disyunción}
+Dos proposiciones arbitrarias $p$ y $q$ que se combinan mediante la palabra \emph{o} para formar una nueva proposición cuyo valor de verdad depende de $p$ y $q.$ El valor de $p \vee q$ es verdadero cuando alguna de las $p$ o $q$ es verdadera. La tabla de verdad en este caso es,
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $p$  & $q$ & $p \vee q$   \\
+    \hline
+    V  & V & V   \\
+    \hline
+    V  & F & V   \\
+    \hline
+    F  & V & V   \\
+    \hline
+    F  & F & F   \\
+    \hline
+    \end{tabular}
+    \caption{Tabla de verdad de la disyunción}
+\end{table}
+
+\subsection*{Ejercicio:}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ |c|c|c|c|c|c|c| }
+    \hline
+    $p$  & $q$ & $\neg q$ & $\neg p$ & $p \vee \neg q$ &  $\neg (p \wedge \neg q)$ \\
+    \hline
+    V & V & & & & \\
+    \hline
+    V  & F & & & &\\
+    \hline
+    F  & V & & & &\\
+    \hline
+    F  & F & & & &\\
+    \hline
+    \end{tabular}
+
+    \centering
+    \begin{tabular}{ |c|c|c| }
+    \hline
+    $p$  & $q$ &  $\neg (p \vee \neg q)$ \\
+    \hline
+    V & V &   \\
+    \hline
+    V  & F &  \\
+    \hline
+    F  & V &  \\
+    \hline
+    F  & F &  \\
+    \hline
+    \end{tabular}
+\end{table}
+
+
+\section{Pruebas de hipótesis}
+Una hipótesis es una afirmación que requiere ser puesta a prueba para determinar si es cierta o es falsa. Las pruebas que nosotros vamos a poner a prueba son mediante datos u observaciones. Esto con la idea de tomar mejores decisiones basadas en evidencias. 
+
+\textbf{Recordatorio:} Sea $H_0$ el evento de lanzar un dado y registrar el valor de la cara del dado y sea $H_1$ el evento de lanzar consecutivamente 5 veces una moneda y registrar la cantidad de veces que sale cruz. 
+
+Ahora queremos contestar preguntas del tipo, dado un número en el conjunto $\{0,1,2,3,4,5,6\}$ ¿cómo podemos determinar de que evento corresponde el número?
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+       $x$  & 0 & 1 & 2 & 3 & 4 & 5 & 6   \\
+       \hline
+        $H_0:$ Dado  & 0  & 1/6 & 1/6 & 1/6 &1/6  & 1/6 & 1/6   \\ 
+        \hline
+        $H_1:$ Moneda  & 1/32 & 5/32 & 10/32 & 10/32 & 5/32 & 1/32 &  0 \\ 
+        \hline
+    \end{tabular}
+    \caption{Tabla de probabilidades}
+
+\end{table}
+
+En general vamos a tener el esquema
+\[
+H_0: (\text{hipótesis nula}) \text{ vs } H_1: (\text{hipótesis alternativa})
+\]
+
+A $H_0$ es llamada hipótesis nula y es la que queremos poner a prueba o es la que es de nuestro interés. Mientras que $H_1$ es llamada hipótesis alternativa que nos sirve para poner a prueba a $H_0$ mediante probabilidades. 
+
+\section{Definición:}
+Una \textbf{hipótesis estadística} o simplemente hipótesis es una afirmación o conjetura acerca de la distribución de una o mas variables aleatorias. Una hipótesis es simple si especifica por completo la distribución de probabilidad, en caso contrario es llamada hipótesis compuesta. Una \textbf{prueba de hipótesis} es una regla para decidir si se acepta o se rechaza una hipótesis nula en contra de una hipótesis alternativa.  
+
+\subsection*{Ejercicios}
+De una hipótesis nula y una alternativa para los siguientes casos. 
+\begin{enumerate}
+	\item La cantidad de oficinas en el país que usan cierto software es de al menos $62\%$.
+	\item Si el auto cobro de una tienda es mas rápida que un cajero atendido por una persona. 
+\end{enumerate}
+
+ 
+\section{Tipos de errores}
+\begin{enumerate}
+    \item El error de tipo I es cuando se rechaza a $H_0$ siendo esta verdadera.
+    \item El error de tipo II es cuando no se rechaza a $H_0$ siendo esta falsa.
+\end{enumerate}
+
+De estos errores tenemos, la siguiente tabla. 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $p$  & $H_0$ cierta & $H_0$ falsa   \\
+    \hline
+    Rechazar $H_0$  & $\alpha$ & Decisión correcta   \\
+    \hline
+    Aceptar $H_0$ & Decisión correcta & $\beta$  \\
+    \hline
+    \end{tabular}
+    \caption{Regiones críticas}
+\end{table}
+
+En este caso queremos $\alpha$ y $\beta$ como probabilidades que podemos usar para saber si bien estamos cometiendo un error de algún tipo. 
+
+\subsection*{Ejemplo}
+Supongamos que tenemos el lanzamiento de una moneda. Denotemos esto por 
+\[
+X_i = \begin{cases}
+1 & \text{ si la moneda cae águila} \\
+0 & \text{ si la moneda cae sol}.
+\end{cases}
+\] 
+Tomemos 100 lanzamientos, o sea $X_1, \dots X_100$. Queremos inferir sobre $p$ la probabilidad del lanzamiento. 
+
+
+\begin{align*}
+\beta(\mu_1) & = \Prb \left( \text{No rechazar } H_0 \text{ cuando } \mu=\mu_1 \right) \\
+& = \Prb \left( |Z|<z_{\alpha/2}| \mu=\mu_1 \right) \\
+& = \Prb \left( \left|\frac{\overline{X}-\mu_0}{\sigma/\sqrt{n}} \right|<z_{\alpha/2}| \mu=\mu_1 \right) \\
+& = \Prb \left(\mu_0 - z_{\alpha/2} \sigma/\sqrt{n}  < \overline{X} <  \mu_0 + z_{\alpha/2} \sigma/\sqrt{n}| \mu=\mu_1 \right) \\
+& = \Prb \left(- z_{\alpha/2} + \frac{\mu_0-\mu_1}{\sigma/\sqrt{n}}  < \frac{\overline{X}-\mu_1}{\sigma/\sqrt{n}} <  z_{\alpha/2} + \frac{\mu_0-\mu_1}{\sigma/\sqrt{n}}\right) \\
+& = \Phi \left( z_{\alpha/2} + \frac{\mu_0-\mu_1}{\sigma/\sqrt{n}} \right) - \Phi \left( -z_{\alpha/2} + \frac{\mu_0-\mu_1}{\sigma/\sqrt{n}}\right) \\
+\end{align*} 
+\begin{enumerate}
+	\item ¿Cuál es la distribución de $\frac{1}{n}\sum_{i=1}^{100} X_i$.
+	\item ¿Cuál es el valor esperado?
+	\item Si $\hat{p}=\frac{1}{n}\sum_{i=1}^{100} X_i$ ¿A que parámetro y que tipo de estimador es?
+\end{enumerate}
+
+\section*{Ejercicios}
+Consideremos $X_1, \dots X_{30}$ variables independientes distribuidas $Norm(\theta,1)$. Encuentre el nivel de confianza de los intervalos.
+
+\begin{enumerate}
+	\item $\left[\hat{\Theta}-\frac{2.14}{\sqrt{30}},\hat{\Theta}+\frac{2.14}{\sqrt{30}} \right]$.
+	\item $\left[\hat{\Theta}-\frac{1.85 \sigma}{\sqrt{N}},\hat{\Theta}+\frac{1.85 \sigma}{\sqrt{N}} \right]$.
+\end{enumerate}
+
+Sea $X$ una $Norm(\mu,\sigma)$. Para $N=15$ se encontró que,
+
+\[
+\sum_{n=1}^N X_n = 250
+\]
+
+\[
+\sum_{n=1}^N X_n^2 = 10,000
+\]
+
+encuentre el intervalo de confianza del $95\%$ para $\mu.$
+
+Sea $\hat{\theta}$ la media muestral de un conjunto de $N$ datos si se sabe que provienen de una $Norm(\theta,3^2)$, encuentre $N$ tal que 
+\[
+\Prb(\hat{\Theta}-1<\theta < \hat{\Theta}+1)=.95
+\] 
+\section{Valor critico}
+
+\section{$p$-valor}
+
+\
+\end{document}
+Tenemos dos términos importantes, el
+
+\begin{enumerate}
+	\item 
+\end{enumerate}

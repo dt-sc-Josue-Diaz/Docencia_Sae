@@ -1,0 +1,173 @@
+\documentclass{assignment}
+\usepackage{lipsum}
+
+\newcommand*{\name}{}
+\newcommand*{\id}{}
+\newcommand*{\course}{}
+
+\newcommand*{\assignment}{Notas de clase: Lunes 15 de Mayo}
+
+\include{00_preambulo/00_entornos}
+
+\begin{document}
+
+% Titulo
+\maketitle
+
+
+\section{Repaso matemáticas: Ejercicios lógicos}
+
+\subsection*{Proposiciones necesarias y suficientes}
+
+En una amplia parte de las matemáticas se trabaja con proposiciones del tipo \emph{Si $p$ entonces $q$}. Estas proposiciones son llamadas condicionales o implicaciones y se denota por $p  \Rightarrow q$. También existen proposiciones en la cuales se da que, $p  \Rightarrow q$ y $q \Rightarrow p$. Cuando sucede esto tenemos condiciones necesarias y sufientes, o tambien llamadas proposiciones \emph{si y solo si}.
+
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $p$  & $q$ & $p  \Rightarrow  q$   \\
+    \hline
+    V  & V & V   \\
+    \hline
+    V  & F & F   \\
+    \hline
+    F  & V & F   \\
+    \hline
+    F  & F & V   \\
+    \hline
+    \end{tabular}
+    \caption{Tabla de verdad de la implicación}
+
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $p$  & $q$ & $p  \Leftrightarrow  q$   \\
+    \hline
+    V  & V &    \\
+    \hline
+    V  & F &    \\
+    \hline
+    F  & V &    \\
+    \hline
+    F  & F &   \\
+    \hline
+    \end{tabular}
+    \caption{Tabla de verdad de la bicondicional}
+
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $p$  & $q$ & $\neg p  \vee  q$   \\
+    \hline
+    V  & V &    \\
+    \hline
+    V  & F &    \\
+    \hline
+    F  & V &    \\
+    \hline
+    F  & F &   \\
+    \hline
+    \end{tabular}
+    \caption{Tabla de verdad de la bicondicional}
+
+\end{table}
+
+\section{Pruebas de hipótesis}
+
+\[
+H_0: (\text{hipótesis nula}) \text{ vs } H_1: (\text{hipótesis alternativa})
+\]
+
+A $H_0$ es llamada \textbf{hipótesis nula} y es la que queremos poner a prueba o es la que es de nuestro interés. Mientras que $H_1$ es llamada \textbf{hipótesis alternativa} que nos sirve para poner a prueba a $H_0$ mediante probabilidades. 
+
+\section{Definición:}
+Una \textbf{hipótesis estadística} o simplemente hipótesis es una afirmación o conjetura acerca de la distribución de una o mas variables aleatorias. Una hipótesis es simple si especifica por completo la distribución de probabilidad, en caso contrario es llamada hipótesis compuesta. Una \textbf{prueba de hipótesis} es una regla para decidir si se acepta o se rechaza una hipótesis nula en contra de una hipótesis alternativa.  
+ 
+\section{Tipos de errores}
+\begin{enumerate}
+    \item El error de tipo I es cuando se rechaza a $H_0$ siendo esta verdadera.
+    \item El error de tipo II es cuando no se rechaza a $H_0$ siendo esta falsa.
+\end{enumerate}
+
+En este caso queremos $\alpha$ y $\beta$ como probabilidades que podemos usar para saber si bien estamos cometiendo un error de algún tipo.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $p$  & $H_0$ cierta & $H_1$ falsa   \\
+    \hline
+    Rechazar $H_0$  & $\alpha$ &  $1-\beta$   \\
+    \hline
+    Aceptar $H_1$ & $1-\alpha$ & $\beta$  \\
+    \hline
+    \end{tabular}
+    \caption{Regiones críticas}
+\end{table}
+
+\newpage
+
+\subsection*{Teorema limite central}
+ Si la población tiene una distribución con media $\mu$ y varianza $\sigma^2$ entonces la media muestral de tamaño $n,$ $\overline{X}$ tiene aproximadamente una distribución normal con media $\mu$ y varianza $\sigma^2/n$. 
+ 
+\[
+\overline{X} \sim Norm(\mu,\sigma^2/n)
+\] 
+
+
+\subsection*{Ejercicio}
+Se encontró que solo el $35\%$ de los niños de un kindergarten comen brocoli. La directiva hizo una campaña para fomentar el consumo de brocoli. Después de la campaña se detectó que 390 niños de 1009 comen brocolo. La directiva desea saber si la campaña ha sido exitosa. Considera la desviación estandar conocida. 
+
+
+
+\subsection*{Test de valor critico}
+
+\begin{enumerate}
+	\item Calcular el valor critico: $z_\alpha=\phi^{-1}(1-\alpha)$.
+	\item Considerando a $\hat{Z}=\frac{\hat{\Theta} - \theta}{\sigma / \sqrt{N}}$ hay dos opciones;
+		\begin{enumerate}
+			\item 
+Si $\hat{Z} \geq z_\alpha$ entonces se rechaza $H_0$.
+			\item Si $\hat{Z} < z_\alpha$ entonces se acepta $H_0$.
+		\end{enumerate}
+\end{enumerate}
+
+
+
+
+
+
+
+\subsection*{Test de valor $p$ valor}
+Consideremos a $\mathbb{Z}$ un estimador que se distribuye $Norm(0,1)$ y un estadístico $\hat{z}$ un $p$ valor se define como la probabilidad 
+
+\[
+\Prb(\hat{Z} \leq \hat{z})= \phi(\hat{z})
+\]
+note que tomando la función de quantiles de esta normal se tiene que 
+
+\[
+ \hat{z}= \phi^{-1}(p-\text{valor})
+\]
+en realidad esto no es necesario ya que el $p$-valor viene siempre de los datos. El test de $p$-valor es cuando comparamos un nivel critico $p-\text{ valor} < \alpha$. 
+
+\subsection{Regla de decisión}
+
+\[ 
+\delta(\hat{z})=\begin{cases}
+1, \Prb(\hat{Z} \leq \hat{z} ) < \alpha \text{ rechazamos } H_0 \\
+0, \Prb(\hat{Z} \leq \hat{z} ) \geq \alpha \text{ aceptamos } H_0
+\end{cases}
+\]
+
+
+\end{document}
+
